@@ -7,4 +7,8 @@ RSpec.describe Article, type: :model do
     it { should validate_presence_of(:description) }
     it { should validate_presence_of(:url) }
   end
+
+  context 'relationships' do
+    it { should have_many(:comments).dependent(:destroy) }
+  end
 end
