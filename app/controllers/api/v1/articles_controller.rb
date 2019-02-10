@@ -14,6 +14,15 @@ class API::V1::ArticlesController < ApplicationController
         end
     end
 
+    def show
+        article = Article.find_by(id: params[:id])
+        if article
+            render json: article, status: 200
+        else 
+            render json: {errors: {message: {article: "can't be found."}}}, status: 404
+        end
+    end
+
     private
 
     def article_params

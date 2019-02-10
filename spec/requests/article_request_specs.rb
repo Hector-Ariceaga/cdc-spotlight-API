@@ -4,6 +4,7 @@ RSpec.describe 'Articles API', type: :request do
 
     #Initialize Test Data
     let!(:articles) { FactoryBot.create_list(:article, 5)}
+    let!(:article_id) { articles.first.id }
 
     describe 'GET /api/v1/articles' do 
 
@@ -14,7 +15,6 @@ RSpec.describe 'Articles API', type: :request do
         end
 
         it 'returns collection of articles in JSON' do
-            json = JSON.parse(response.body)
             expect(json).not_to be_empty
             expect(json.size).to eq(5)
         end
@@ -67,8 +67,6 @@ RSpec.describe 'Articles API', type: :request do
             end
 
             it 'returns validation error messages in JSON' do
-                json = JSON.parse(response.body, symbolize_names: true)
-
                 expect(json).not_to be_empty
                 expect(json[:errors][:messages]).to eq({
                     :title=>["can't be blank"],
@@ -76,6 +74,38 @@ RSpec.describe 'Articles API', type: :request do
                     :author=>["can't be blank"],
                     :url=>["can't be blank"]
                 })
+            end
+        end
+    end
+
+    describe 'GET /api/v1/articles/:id' do 
+        context 'if article exists' do
+            before { get "/api/v1/articles/#{article_id}"}
+
+            it 'returns status code of 200' do
+                expect(response).to have_http_status(200)
+            end
+
+            it 'returns a particular article in JSON' do
+                expect(json).not_to be_empty
+                expect(json[:id]).to eq(article_id)
+                expect(json[:title]).to eq(articles.first.title)
+                expect(json[:author]).to eq(articles.first.author)
+                expect(json[:description]).to eq(articles.first.description)
+                expect(json[:url]).to eq(articles.first.url)
+            end
+        end
+
+        context 'if article does not exist' do
+            before { get "/api/v1/articles/10000000"}
+
+            it 'returns status code of 404' do
+                expect(response).to have_http_status(404)
+            end
+
+            it 'returns error message of not found in JSON' do
+                expect(json).not_to be_empty
+                expect(json[:errors][:message]).to eq({:article=>"can't be found."})
             end
         end
     end
