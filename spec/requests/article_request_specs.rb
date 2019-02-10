@@ -50,11 +50,33 @@ RSpec.describe 'Articles API', type: :request do
                 expect(json[:url]).to eq(valid_attributes[:article][:url])
             end
         end
-        
+
         context 'when request is invalid' do
+
+            before { post '/api/v1/articles', params: {
+                article: {
+                    title: '',
+                    author: '',
+                    description: '',
+                    url: ''
+                }
+            }}
+
+            it 'retuns a status of 422' do 
+                expect(response).to have_http_status(422)
+            end
+
+            it 'returns validation error messages in JSON' do
+                json = JSON.parse(response.body, symbolize_names: true)
+
+                expect(json).not_to be_empty
+                expect(json[:errors][:messages]).to eq({
+                    :title=>["can't be blank"],
+                    :description=>["can't be blank"],
+                    :author=>["can't be blank"],
+                    :url=>["can't be blank"]
+                })
+            end
         end
     end
-
-
-
 end

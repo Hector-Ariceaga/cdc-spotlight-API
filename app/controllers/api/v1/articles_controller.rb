@@ -9,6 +9,8 @@ class API::V1::ArticlesController < ApplicationController
         article = Article.new(article_params)
         if article.save
             render json: article, status: 201
+        else
+            render json: {errors: {messages: article.errors.messages }}, status: 422
         end
     end
 
