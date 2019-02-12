@@ -109,4 +109,102 @@ RSpec.describe 'Articles API', type: :request do
             end
         end
     end
+
+    describe 'PUT /api/v1/articles/:id' do
+        context 'if article exists' do
+            context 'and attributes are valid' do
+
+                let!(:valid_attributes) {
+                    {
+                        article: {
+                            title: 'Updated Title',
+                            author: 'Updated Author',
+                            description: 'Updated Description',
+                            url: 'UpdatedUrl.com'
+                        }
+                    }
+                }
+
+                before { put "/api/v1/articles/#{article_id}", params: valid_attributes}
+
+                it 'returns status code of 200' do
+                    expect(response).to have_http_status(200)
+                end
+
+                it 'updates the article' do
+                    expect(json[:title]).to eq(valid_attributes[:article][:title])
+                    expect(json[:author]).to eq(valid_attributes[:article][:author])
+                    expect(json[:description]).to eq(valid_attributes[:article][:description])
+                    expect(json[:url]).to eq(valid_attributes[:article][:url])
+                end
+            end
+
+            context 'and attributes are not valid' do
+                let!(:invalid_attributes) {
+                    {
+                        article: {
+                            title: '',
+                            author: '',
+                            description: '',
+                            url: ''
+                        }
+                    }
+                }
+
+                before { put "/api/v1/articles/#{article_id}", params: invalid_attributes}
+
+                it 'retuns a status of 422' do 
+                    expect(response).to have_http_status(422)
+                end
+    
+                it 'returns validation error messages in JSON' do
+                    expect(json).not_to be_empty
+                    expect(json[:errors][:messages]).to eq({
+                        :title=>["can't be blank"],
+                        :description=>["can't be blank"],
+                        :author=>["can't be blank"],
+                        :url=>["can't be blank"]
+                    })
+                end
+            end
+        end
+
+        context 'if article does not exist' do 
+
+            before { put "/api/v1/articles/1000000"}
+
+            it 'returns status code of 404' do
+                expect(response).to have_http_status(404)
+            end
+
+            it 'returns error message of not found in JSON' do
+                expect(json).not_to be_empty
+                expect(json[:errors][:message]).to eq({:article=>"can't be found."})
+            end
+        end
+    end
+
+    describe 'DELETE /api/v1/articles/:id' do
+
+        context 'if article exists' do
+            before { delete "/api/v1/articles/#{article_id}"}
+
+            it 'returns status code of 204' do
+                expect(response).to have_http_status(204)
+            end
+        end
+
+        context 'if article does not exist' do
+            before { delete "/api/v1/articles/1000000"}
+
+            it 'returns status code of 404' do
+                expect(response).to have_http_status(404)
+            end
+
+            it 'returns error message of not found in JSON' do
+                expect(json).not_to be_empty
+                expect(json[:errors][:message]).to eq({:article=>"can't be found."})
+            end
+        end
+    end
 end
