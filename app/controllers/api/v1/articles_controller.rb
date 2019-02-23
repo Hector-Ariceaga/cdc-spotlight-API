@@ -57,6 +57,6 @@ class API::V1::ArticlesController < ApplicationController
 
 
     def article_params
-        params.require(:article).permit(:title, :author, :description, :url)
+        params.require(:article).permit(:title, :author, :description, :content, :url)
     end
 end
