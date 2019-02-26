@@ -1,24 +1,49 @@
-# README
+# Spotlight API
+Your go to web application for viewing and contributing to articles!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
+This back-end was designed to work with the following [react client](https://github.com/Hector-Ariceaga/cdc-spotlight-client-v1).
 
-Things you may want to cover:
+Clone this repository into the same root directory as the client folder.
 
-* Ruby version
+Run the following:
+```
+rails db:create
+rails db:migrate
+rails db:seed
+rake start
+```
 
-* System dependencies
+## Version
+This is version 1.0, which contains the following:
 
-* Configuration
+* Models, routes, and controllers for articles and comments
+* Basic tests for CRUD functionality of articles and comments
 
-* Database creation
+## Dependencies
+This API uses PostgreSQL for it's database, RSPEC for testing, and the following gems:
 
-* Database initialization
+PRODUCTION
+* ruby '2.6.0'
+* rails '~> 5.2.2'
+* rack-cors
+* foreman
+* bootsnap
 
-* How to run the test suite
+TESTING
+* rspec-rails
+* factory_bot_rails
+* database_cleaner
+* faker
+* cabybara
+* shoulda-matchers
+* rails-controller-testing
 
-* Services (job queues, cache servers, search engines, etc.)
+## Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/Hector-Ariceaga/cdc-spotlight-API. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-* Deployment instructions
+## License
+The API is available as open source under the terms of the MIT License.
 
-* ...
+## Code of Conduct
+Everyone interacting in the Spotlight project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
