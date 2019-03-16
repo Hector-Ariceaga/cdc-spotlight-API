@@ -25,9 +25,10 @@ RSpec.describe 'Articles API', type: :request do
             let(:valid_attributes) {
                 {
                     article: {
-                        title: Faker::TheITCrowd.quote,
-                        author: Faker::ParksAndRec.character,
-                        description: Faker::Lovecraft.paragraph(1),
+                        title: Faker::TvShows::TheITCrowd.quote,
+                        author: Faker::TvShows::ParksAndRec.character,
+                        description: Faker::Books::Lovecraft.paragraph(1),
+                        content: Faker::Books::Lovecraft.paragraph(2),
                         url: Faker::Internet.url
                     }
                 }
@@ -47,6 +48,7 @@ RSpec.describe 'Articles API', type: :request do
                 expect(json[:title]).to eq(valid_attributes[:article][:title])
                 expect(json[:author]).to eq(valid_attributes[:article][:author])
                 expect(json[:desription]).to eq(valid_attributes[:article][:desription])
+                expect(json[:content]).to eq(valid_attributes[:article][:content])
                 expect(json[:url]).to eq(valid_attributes[:article][:url])
             end
         end
@@ -58,6 +60,7 @@ RSpec.describe 'Articles API', type: :request do
                     title: '',
                     author: '',
                     description: '',
+                    content: '',
                     url: ''
                 }
             }}
@@ -71,6 +74,7 @@ RSpec.describe 'Articles API', type: :request do
                 expect(json[:errors][:messages]).to eq({
                     :title=>["can't be blank"],
                     :description=>["can't be blank"],
+                    :content=>["can't be blank"],
                     :author=>["can't be blank"],
                     :url=>["can't be blank"]
                 })
