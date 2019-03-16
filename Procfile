@@ -1,2 +1,2 @@
-web: cd ../cdc-spotlight-client-v1 && npm start
+web: npm start
 api: bundle exec rails s -p 5000
