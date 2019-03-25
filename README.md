@@ -1,6 +1,8 @@
 # Spotlight API
 Your go to web application for viewing and contributing to articles!
 
+Checkout the video [demo](https://youtu.be/DU6coBUHEs0)!
+
 ## Installation
 This back-end was designed to work with the following [react client](https://github.com/Hector-Ariceaga/cdc-spotlight-client-v1).
 
