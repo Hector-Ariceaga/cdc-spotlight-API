@@ -28,7 +28,7 @@ PRODUCTION
 * rails '~> 5.2.2'
 * rack-cors
 * foreman
-* bootsnap
+* bootstrap
 
 TESTING
 * rspec-rails
