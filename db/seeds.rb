@@ -1,21 +1,57 @@
 articles = Article.create([{
-    title: 'Um, is this the boring, peaceful kind of taking to the streets?', author: 'My fellow Earthicans',  
-    content: "Now Fry, it's been a few years since medical school, so remind me. Disemboweling in your species: fatal or non-fatal? With a warning label this big, you know they gotta be fun! You know the worst thing about being a slave? They make you work, but they don't pay you or let you go.
-
-    Why would a robot need to drink? Who said that? SURE you can die! You want to die?! Leela, are you alright? You got wanged on the head. I guess because my parents keep telling me to be more ladylike. As though!
+    title: 'CDC-led Study: Persistence of Ebola Virus after the end of widespread transmission in Liberia: An Outbreak Report', 
+    author: 'Emily Kainne Dokubo, MD 
+    Annika Wendland, MPH
+    Suzanne E Mate, PhD
+    Jason T Ladner, PhD
+    Esther L Hamblion, PhD
+    Philomena Raftery, MSc
+    David J Blackley, DrPH
+    A Scott Laney, PhD
+    Nuha Mahmoud, MD
+    Gloria Wayne-Davies, MPH
+    Lisa Hensley, PhD
+    Eric Stavale, BSc
+    Lawrence Fakoli, BSc
+    Christopher Gregory, MD
+    Tai-Ho Chen, MD
+    Augustine Koryon, BSc
+    Denise Roth Allen, PhD
+    Jennifer Mann, MPH
+    Andrew Hickey, PhD
+    John Saindon, DrHSc
+    Mehboob Badini, MBBS
+    April Baller, MD
+    Peter Clement, MD
+    Fatorma Bolay, PhD
+    Yatta Wapoe, MD
+    Michael R Wiley, PhD
+    James Logue, BSc
+    Bonnie Dighero-Kemp, BSc
+    Elizabeth Higgs, MD
+    Alex Gasasira, MBChB
+    Desmond E Williams, MD
+    Bernice Dahn, MD
+    Francis Kateh, MD
+    Tolbert Nyenswah, MPH
+    Gustavo Palacios, PhD
+    Mosoka P Fallah, PhD',  
+    content: "Summary
+    Background
+    Outbreak response efforts for the 2014–15 Ebola virus disease epidemic in west Africa brought widespread transmission to an end. However, subsequent clusters of infection have occurred in the region. An Ebola virus disease cluster in Liberia in November, 2015, that was identified after a 15-year-old boy tested positive for Ebola virus infection in Monrovia, raised the possibility of transmission from a persistently infected individual.
+    Methods
+    Case investigations were done to ascertain previous contact with cases of Ebola virus disease or infection with Ebola virus. Molecular investigations on blood samples explored a potential linkage between Ebola virus isolated from cases in this November, 2015, cluster and epidemiologically linked cases from the 2014–15 west African outbreak, according to the national case database.
+    Findings
+    The cluster investigated was the family of the index case (mother, father, three siblings). Ebola virus genomes assembled from two cases in the November, 2015, cluster, and an epidemiologically linked Ebola virus disease case in July, 2014, were phylogenetically related within the LB5 sublineage that circulated in Liberia starting around August, 2014. Partial genomes from two additional individuals, one from each cluster, were also consistent with placement in the LB5 sublineage. Sequencing data indicate infection with a lineage of the virus from a former transmission chain in the country. Based on serology and epidemiological and genomic data, the most plausible scenario is that a female case in the November, 2015, cluster survived Ebola virus disease in 2014, had viral persistence or recurrent disease, and transmitted the virus to three family members a year later.
+    Interpretation
+    Investigation of the source of infection for the November, 2015, cluster provides evidence of Ebola virus persistence and highlights the risk for outbreaks after interruption of active transmission. These findings underscore the need for focused prevention efforts among survivors and sustained capacity to rapidly detect and respond to new Ebola virus disease cases to prevent recurrence of a widespread outbreak.
+    Funding
+    US Centers for Disease Control and Prevention, Defense Threat Reduction Agency, and WHO.", 
+    description: "A Year after Initial Infection, a 2015 Flare-Up of Ebola Emphasizes the Need for Continued Surveillance
+    The 2014 Ebola outbreak in West Africa led to improved disease surveillance and response capacity in affected countries, which were effective in ending widespread transmission. However, near the end of the epidemic in 2015, several focal clusters of infection were identified. One cluster in Liberia raised the possibility of transmission from a persistently infected female survivor. Investigation of the source of infection for this cluster provides suggestive evidence of Ebola virus disease persistence and highlights the risk for outbreaks after interruption of active transmission.
     
-    Fry, you can't just sit here in the dark listening to classical music. Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cruel velvet drapes, lined with what would appear to be some sort of cruel muslin and the cute little pom-pom curtain pull cords. Cruel though they may be…
-    
-    No! The cat shelter's on to me. Hey, what kinda party is this? There's no booze and only one hooker. Moving along… Hey, guess what you're accessories to. Would you censor the Venus de Venus just because you can see her spewers?
-    
-    Oh, you're a dollar naughtier than most. Bender, we're trying our best. Hey, guess what you're accessories to. No! Don't jump!
-    
-    Good news, everyone! I've taught the toaster to feel love! Hello Morbo, how's the family? Bender, quit destroying the universe! Say it in Russian! Ah, yes! John Quincy Adding Machine. He struck a chord with the voters when he pledged not to go on a killing spree.
-    
-    Shut up and get to the point! Negative, bossy meat creature! Bender, I didn't know you liked cooking. That's so cute. Why am I sticky and naked? Did I miss something fun? Okay, I like a challenge. I'm sorry, guys. I never meant to hurt you. Just to destroy everything you ever believed in.
-    
-    Spare me your space age technobabble, Attila the Hun! Humans dating robots is sick. You people wonder why I'm still single? It's 'cause all the fine robot sisters are dating humans! Bender, you risked your life to save me!", description: "Hey, what kinda party is this? There's no booze and only one hooker. Also Zoidberg.", 
-    url: 'testurl.com'}, 
+    Evidence of viral persistence among Ebola virus disease survivors underscores the need for risk assessment and focused prevention efforts, as well as sustained capacity to rapidly detect new cases and implement an effective response to prevent a widespread outbreak.", 
+    url: 'https://www.thelancet.com/journals/lancet/article/PIIS1473-3099(18)30417-1/fulltext#seccestitle10'}, 
     
     {title: "Kif might! Good news, everyone! There's a report on TV with some very bad news! I'm sure those windmills will keep them cool.", 
     author: 'Also dark wizards',     
